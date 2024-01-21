@@ -6,7 +6,7 @@ Let pages = [];
 for(Let i = 0; i<10; i++) {
   pages.push(new HtmlWebpackPlugin({
     filename: i+'.html',
-    template: './src/views/number.njk',
+    template: './src/views/partials/number.njk',
     templateParameters: { number: i }
   }));
 }
