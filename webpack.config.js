@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-Let pages = [];
-for(Let i = 0; i<10; i++) {
+let pages = [];
+for(let i = 10; i<20; i++) {
   pages.push(new HtmlWebpackPlugin({
     filename: i+'.html',
-    template: './src/views/partials/number.njk',
+    template: './src/views/number.njk',
     templateParameters: { number: i }
   }));
 }
@@ -17,6 +17,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     static: {
@@ -54,7 +55,7 @@ module.exports = {
     filename: 'about.html',
     template: './src/views/about.njk'
   }),
-  new MiniCssExtractPlugin()
+  new MiniCssExtractPlugin(),
   ...pages,
 ],
 };

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "dev": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "deploy": "npm run build && surge ./dist tasty-veil.surge.sh"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "sass-loader": "^14.0.0",
     "simple-nunjucks-loader": "^3.2.0",
     "style-loader": "^3.3.4",
+    "surge": "^0.23.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
