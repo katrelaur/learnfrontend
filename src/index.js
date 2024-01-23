@@ -1,6 +1,11 @@
 console.log('hello webpack2');
-const common = require('./common.js');
-common.hello();
-import es from './es.js';
-es.hello();
 import './style.scss';
+import { createApp, ref } from 'vue';
+
+const app = createApp({
+    setup(){
+    return {
+        count: ref(0)
+    }
+    }
+}).mount('#app');
